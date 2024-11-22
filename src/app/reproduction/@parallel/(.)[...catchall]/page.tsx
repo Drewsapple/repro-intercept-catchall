@@ -1,9 +1,9 @@
-export default function Page({
+export default async function Page({
   params,
 }: {
-  params: {
+  params: Promise<{
     catchall: string[];
-  };
+  }>;
 }) {
-  return <pre>{JSON.stringify(params)}</pre>;
+  return <pre>{JSON.stringify(await params)}</pre>;
 }

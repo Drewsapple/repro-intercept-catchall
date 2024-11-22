@@ -1,14 +1,14 @@
-export default function Page({
+export default async function Page({
   params,
 }: {
-  params: {
+  params: Promise<{
     catchall: string[];
-  };
+  }>;
 }) {
   return (
     <div>
       <div>Loaded directly, no intercept</div>
-      <pre>{JSON.stringify(params)}</pre>
+      <pre>{JSON.stringify(await params)}</pre>
     </div>
   );
 }
